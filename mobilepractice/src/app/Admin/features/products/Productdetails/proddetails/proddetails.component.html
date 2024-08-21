@@ -1,0 +1,30 @@
+<style>
+   
+</style>
+   
+   
+   
+   <div class="container d-flex justify-content-around mt-3" >
+        <ng-container *ngIf="details">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top h-50" src="{{details.imageurl}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Product Name:{{details.pname}}</h5>
+                    <p class="card-text">Product Price:{{details.price}}</p>
+                    <p class="card-text">Product quantity:{{details.stock_qty}}</p>
+                    <p class="card-text">Product availability:{{details.availability}}</p>
+                   <!--  <button class="btn btn-light" [routerLink]="['/admin/home/movies', movie.id]">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="onDelete(movie.id)" >Delete</button> -->
+                   
+                    <a class="btn btn-outline-success mr-2" colspan="3" [routerLink]="['update']" style="margin-right: 20px;">Edit</a>
+                    <a class="btn btn-danger mr-2" (click)="ondelete(details.pid)" colspan="3">Delete</a>
+
+
+               
+                </div>
+            </div>
+        </ng-container>
+        </div>
+               
+        
+ 

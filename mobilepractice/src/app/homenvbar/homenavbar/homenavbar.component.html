@@ -1,0 +1,346 @@
+<!-- <style>
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link,
+  .navbar-custom .navbar-toggler-icon {
+      color: #ffffff70;
+  }
+  .navbar-custom .nav-link:hover {
+      color: #ffcccc;
+  }
+  .search-bar {
+      width: 50%;
+      margin: auto;
+  }
+  .btn-custom {
+      color: #749458;
+      background-color: #ffffff;
+      border-color: #ffffff;
+  }
+  .btn-custom:hover {
+      color: #ffffff;
+      background-color: rgb(149, 255, 84);
+      border-color: #749458;
+  }
+  .parent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar {
+      background-color: rgba(0, 49, 7, 0.858);
+      height: 10%;
+  }
+  .image2{
+    position: relative;
+    top: 70px;
+    width: 100%;
+    height: 90%;
+    background-image:url('https://cdn.pixabay.com/photo/2019/11/05/00/53/cellular-4602489_640.jpg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }
+ 
+</style>
+
+<div class="parent">
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">Leo Mobiles</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+            </li>
+          </ul>
+          <form class="d-flex search-bar">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-custom" type="submit">Search</button>
+          </form>
+           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['create']">Sign-up</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['login']">Login</a>
+            </li> 
+          </ul>
+      </div>
+      
+  </div>
+</nav>
+
+<div class="image2">
+
+</div>
+
+</div>
+
+
+ <nav class="navbar navbar-expand-lg bg-body-tertiary  navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['#']">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['#']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['service']">Admin Services</a>
+          </li>  
+           <li class="nav-item">
+            <a class="nav-link" [routerLink]="['list']">List-products</a>
+          </li>  
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div>
+  </div> -->
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Mobiles</title>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin-top: 56px; /* Adjust based on navbar height */
+        }
+        .navbar-custom {
+            background-color: #2F4F4F;
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-toggler-icon {
+            color: #D3D3D3;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #F08080;
+        }
+        .search-bar {
+            width: 50%;
+            margin: auto;
+        }
+        .btn-custom {
+            color: #FFFFFF;
+            background-color: #20B2AA;
+            border-color: #20B2AA;
+        }
+        .btn-custom:hover {
+            color: #FFFFFF;
+            background-color: #3CB371;
+            border-color: #3CB371;
+        }
+        .main {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Increased height */
+            background-image: url('https://cdn.pixabay.com/photo/2021/10/11/17/54/technology-6701504_1280.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #E0FFFF;
+            padding: 20px;
+        }
+        .main::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .main > div {
+            position: relative;
+            z-index: 1;
+        }
+        .main h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .main p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .main .btn {
+            font-size: 1.25rem;
+            padding: 10px 30px;
+        }
+        .cards-section {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Space between cards */
+        }
+        .card-custom img {
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+        }
+        .card-custom .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .card-custom .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card-custom .card-text {
+            font-size: 1rem;
+            color: #696969;
+        }
+        .footer {
+            background-color: #2F4F4F;
+            color: #D3D3D3;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+  
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Leo Mobiles</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['']">Home</a>
+                </li>
+               <!--  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li> -->
+               <!--  <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li> -->
+            </ul>
+            <!-- <form class="d-flex search-bar" (click)="filterCards()">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-custom" type="button">Search</button>
+            </form> -->
+            <form class="d-flex search-bar" [formGroup]="searchForm">
+             
+                <input formControlName="searchTerm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <!-- <button class="btn btn-custom" type="submit">Search</button> -->
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['create']">Sign-up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['login']">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="main">
+    <div>
+        <h1>Welcome to Leo Mobiles</h1>
+        <p>Your one-stop shop for the latest mobile devices</p>
+        <a class="btn btn-custom" [routerLink]="['login']">Explore Now</a>
+    </div>
+</div>
+
+<!-- <div class="cards-section">
+    <div class="container">
+        <div class="row" id="cardsContainer">
+            <div class="col-md-4 mb-4 card-item" data-title="Realme">
+                <div class="card card-custom">
+                    <img src="https://dvf83rt16ac4w.cloudfront.net/upload/media/1717395875728913.jpeg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">Realme</h5>
+                        <p class="card-text">This is a short description of the Realme product.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 card-item" data-title="IPhone">
+                <div class="card card-custom">
+                    <img src="https://m.media-amazon.com/images/I/81Os1SDWpcL._AC_UF1000,1000_QL80_.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">IPhone</h5>
+                        <p class="card-text">This is a short description of the iPhone product.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 card-item" data-title="One Plus">
+                <div class="card card-custom">
+                    <img src="https://m.media-amazon.com/images/I/61amb0CfMGL._AC_UF1000,1000_QL80_.jpg" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title">One Plus</h5>
+                        <p class="card-text">This is a short description of the One Plus product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="cards-section">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let card of filteredCards" class="col-md-4 mb-4">
+        <div class="card card-custom">
+          <img [src]="card.image" alt="Card image">
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2024 Leo Mobiles. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

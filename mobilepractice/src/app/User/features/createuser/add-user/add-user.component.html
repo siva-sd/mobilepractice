@@ -1,0 +1,67 @@
+<div class="maincontainer">
+    <div class="form-container">
+    <h1 class="mt-1" style="color: rgb(248, 169, 72);">
+        Register User
+    </h1>
+    <form [formGroup]="form" id="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="UserEmail" class="form-label">Email</label>
+          <input type="text" id="UserEmail" formControlName="email" class="form-control">
+          <span *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="error">
+            <div *ngIf="form.get('email')?.errors?.['required']">Email is required.</div>
+            <div *ngIf="form.get('email')?.errors?.['email']">Invalid email format.</div>
+          </span><br><br>
+        </div>
+    
+        <div class="form-group">
+          <label for="UserName" class="form-label">Name</label>
+          <input type="text" id="UserName" formControlName="name" class="form-control">
+          <span *ngIf="form.get('name')?.touched && form.get('name')?.invalid" class="error">
+            <div *ngIf="form.get('name')?.errors?.['required']">Name is required.</div>
+          </span><br><br>
+        </div>
+    
+        <div class="form-group">
+          <label for="UserGender" class="form-label" >Gender</label><br>
+          <label><input type="radio" formControlName="gender" value="male"> Male</label>
+          <label><input type="radio" formControlName="gender" value="female"> Female</label>
+
+          <span *ngIf="form.get('gender')?.touched && form.get('gender')?.invalid" class="error">
+            <div *ngIf="form.get('gender')?.errors?.['required']">Gender is required.</div>
+          </span><br><br>
+        </div>
+    
+        <div class="form-group">
+          <label for="UserPassword" class="form-label">Password</label>
+          <input type="password" id="UserPassword" formControlName="password" class="form-control">
+          <span *ngIf="form.get('password')?.touched && form.get('password')?.invalid" class="error">
+            <div *ngIf="form.get('password')?.errors?.['required']">Password is required.</div>
+            <div *ngIf="form.get('password')?.errors?.['minlength']">password should be minimum 8 characters</div>
+          </span><br><br>
+        </div>
+    
+        <div class="form-group">
+          <label for="UserConfirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" id="UserConfirmPassword" formControlName="confirmPassword" class="form-control">
+          <span *ngIf="form.get('confirmPassword')?.touched && form.get('confirmPassword')?.invalid" class="error">
+            <div *ngIf="form.get('confirmPassword')?.errors?.['required']">Confirmation password is required.</div>
+            <div *ngIf="form.get('confirmPassword')?.errors?.['mustMatch']">Passwords must match.</div>
+            <div *ngIf="form.get('password')?.errors?.['minlength']">password should be minimum 8 characters</div>
+          </span><br><br>
+        </div>
+    
+        <div class="form-group">
+          <label for="UserContact" class="form-label">Contact</label>
+          <input type="number" id="UserContact" formControlName="contact" class="form-control">
+          <span *ngIf="form.get('contact')?.touched && form.get('contact')?.invalid" class="error">
+            <div *ngIf="form.get('contact')?.errors?.['required']">Contact is required.</div>
+            <div *ngIf="form.get('contact')?.errors?.['min'] || form.get('contact')?.errors?.['max']">Contact must be 10 digits && starts with [1-9]</div>
+          </span><br><br>
+        </div>
+    
+        <div class="form-group button">
+          <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Save</button>
+        </div>
+      </form>
+    </div>
+</div>

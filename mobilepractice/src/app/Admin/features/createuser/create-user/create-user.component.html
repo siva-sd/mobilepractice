@@ -1,0 +1,41 @@
+<div class="container">
+    <h1 class="mt-3">USer List</h1>
+   <!--  <div class="d-flex justify-content-end mt-3">
+        <a [routerLink]="['add-user']" class="btn btn-success">Add User</a>
+    </div> -->
+
+
+    <ng-container *ngIf="details" >
+
+        <table class="table table-bordered mt-3 ">
+            <thead>
+                <th>User Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Role</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of details">
+                    <td>{{user.uid}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.contact}}</td>
+                    <td>{{user.role}}</td>
+
+
+                    <!-- <td><a class="btn btn-success mr-2">Details</a></td>
+                    <td><a class="btn btn-outline-success mr-2" [routerLink]="['upd/',user.email]">Edit</a></td> -->
+                    <td><a class="btn btn-primary mr-2"(click)="onsubmit(user.email)" >Delete</a></td>
+                    
+                </tr>
+            </tbody>
+
+        </table>
+        
+    </ng-container>
+
+
+
+</div>
+

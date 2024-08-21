@@ -1,0 +1,39 @@
+<style>
+   
+</style>
+   
+   
+   
+   <div class="container d-flex justify-content-around mt-3" >
+        <ng-container *ngIf="details">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top h-50" src="{{details.imageurl}}" alt="Card image cap">
+                <div class="card-body">
+
+                    <p class="card-text">Prod ID:{{details.pid}}</p>
+                    <p class="card-title">Prod Name:{{details.pname}}</p>
+                    <p class="card-text">Prod Price:{{details.price}}</p>
+                    
+                    <p class="card-text">Prod availability:{{details.availability}}</p>
+                    <p class="card-text">Prod qty:{{details.stock_qty}}
+                    
+                   
+                   <!--  <button class="btn btn-light" [routerLink]="['/admin/home/movies', movie.id]">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="onDelete(movie.id)" >Delete</button> -->
+                    <a class="btn btn-outline-success mr-2" colspan="3" (click)="decrementproduct()" style="margin-right: 18px;">-</a>
+                    <span class="card-text" style="margin-right: 20px;">{{prodincre}}</span>
+                    <a class="btn btn-outline-success mr-2" colspan="3" (click)="incrementproduct()">+</a><br><br>
+                    
+                    <!-- <button type="button" class="btn btn-danger"  style="margin-right: 20px;" >UsertoOrder</button> -->
+                    <button class="btn btn-outline-success mr-2" colspan="3" (click)="onorder()" style="margin-left: 70px;" [disabled]="isdisabled">Buy Now</button>
+                    <!-- <a class="btn btn-danger mr-2" (click)="ondelete(details.pid)" colspan="3">Delete</a> -->
+
+
+               
+                </div>
+            </div>
+        </ng-container>
+        </div>
+               
+        
+ 

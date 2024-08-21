@@ -1,0 +1,98 @@
+<style>
+
+.table {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+.table thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.table thead th {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.table thead:hover {
+    background-color:darkslategray;
+    color: #fff;
+}
+
+.table tbody:hover {
+    background-color: rgba(0, 96, 128, 0.595);
+}
+
+
+
+.table tbody td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.header th {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #ddd;
+}
+
+
+</style>
+
+
+
+<p>orderdetails works!</p>
+
+    <ng-container *ngIf="details" >
+
+        <table class="table table-bordered mt-3 ">
+            <thead class="header">
+                <th>Order Id</th>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Product Name</th>
+<!--                 <th>Product Brand</th> -->
+                <th>Quantity</th>
+                <th>Delivery Date</th>
+                <th>Total_amount</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let orddetails of details">
+                    <td>{{orddetails.oid}}</td>
+                    <td>{{orddetails.uid}}</td>
+                    <td>{{orddetails.users.name}}</td>
+                    <td>{{orddetails.prod.pname}}</td>
+                    <!-- <td>{{orddetails.prod.brand}}</td> -->
+                    <td>{{orddetails.quantity}}</td>
+                    <td>{{orddetails.deliv_date}}</td>
+                    <td>{{orddetails.total_amount}}</td>
+
+
+                   <!--  <td><a class="btn btn-success mr-2">Details</a></td>
+                    <td><a class="btn btn-outline-success mr-2" [routerLink]="['upd/',user.email]">Edit</a></td>
+                    <td><a [routerLink]="['cart',user.uid]" class="btn btn-success">Product Wishlist</a></td>
+                    <td><a class="btn btn-primary mr-2"(click)="onsubmit(user.email)" >Delete</a></td> -->
+                    
+                </tr>
+            </tbody>
+
+        </table>
+        
+    </ng-container>
+
+
+

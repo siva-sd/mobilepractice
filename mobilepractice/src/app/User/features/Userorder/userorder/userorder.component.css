@@ -1,0 +1,117 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header and Navbar styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Main Body styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    position: relative;
+}
+
+.image-slider::before,
+.image-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+
+.image-slider::after {
+    background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    right: 0;
+    left: auto;
+}
+
+.image-slider .slide {
+    min-width: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.image-slider .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+.image-slider {
+    animation: slide 20s infinite;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-images img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.footer-images img:hover {
+    transform: scale(1.1);
+}

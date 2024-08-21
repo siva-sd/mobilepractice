@@ -1,0 +1,100 @@
+<style>
+    .container {
+      margin-top: 20px;
+    }
+    
+    .user-card {
+      width: 100%;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-body {
+      padding: 20px;
+    }
+    
+    .card-title {
+      color: #343a40;
+    }
+    
+    .card-text {
+      margin-bottom: 10px;
+      color: #6c757d;
+    }
+    
+    .button-group .btn {
+      border-radius: 5px;
+      margin-left: 20px;
+      margin-top: 50px;
+      
+    }
+    
+    .button-group .btn-outline-success {
+      border-color: #28a745;
+      color: #28a745;
+    }
+    
+    .button-group .btn-outline-success:hover {
+      background-color: #28a745;
+      color: #fff;
+    }
+    
+    .button-group .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+    
+    .button-group .btn-success:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+    
+    .button-group .btn-danger {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+    
+    .button-group .btn-danger:hover {
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+  </style>
+
+ <!-- <div class="container">
+    <h1 class="mt-3">User List</h1>
+    <div class="d-flex justify-content-end mt-3">
+      <a [routerLink]="['add-user']" class="btn btn-success">Add User</a>
+    </div> -->
+  
+    <ng-container *ngIf="details">
+      <div class="card user-card mt-3">
+        <div class="row no-gutters">
+           
+            <div *ngFor="let orddetails of details"  class="col-md-4">
+          <div>
+            <img [src]="orddetails.prod.imageurl" class="card-img" alt="User Image">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                
+              <h5 class="card-title">{{orddetails.users.name}}</h5>
+              <p class="card-text"><strong>User Id:</strong> {{orddetails.users.uid}}</p>
+              <p class="card-text"><strong>Name:</strong> {{orddetails.users.name}}</p>
+              <p class="card-text"><strong>Product:</strong> {{orddetails.prod.pname}}</p>
+              <p class="card-text"><strong>Quantity:</strong> {{orddetails.quantity}}</p>
+              <p class="card-text"><strong>Total Price:</strong> {{orddetails.total_amount}}</p>
+
+              </div>
+              <div class="d-flex button-group">
+                <!-- <a class="btn btn-outline-success mr-2" [routerLink]="['upd/']">Edit</a> -->
+                <a class="btn btn-danger mr-2" (click)="cancelorder(orddetails.oid)" >Cancel</a>
+                <!-- <button class="btn btn-danger mr-2" (click)="onsubmit(details.email)">Delete</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>

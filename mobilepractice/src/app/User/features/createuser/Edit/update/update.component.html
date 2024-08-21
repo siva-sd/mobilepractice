@@ -1,0 +1,158 @@
+<!-- <div class="container">
+
+    <h1 class="mt3">
+        Update details
+    </h1>
+
+    <form #form="ngForm" (ngSubmit)="onsubmit()">
+
+        <div class=" mt-2">
+            
+
+            <div class="mt-3">
+                <label for="UserName" class="form-label"> Name  </label>
+                <input type="text" id="UserName" name="UserName" class="form-control" [(ngModel)]="model.name">
+            </div>
+
+            <div class="mt-3">
+                <label for="UserContact" class="form-label"> Contact  </label>
+                <input type="number" id="UserContact" name="UserContact" class="form-control" [(ngModel)]="model.contact">
+            </div>
+
+            <div class="mt-3">
+                <label for="UserPassword" class="form-label"> Password </label>
+                <input type="password" id="UserPassword" name="UserPassword" class="form-control" [(ngModel)]="model.password">
+            </div>
+
+            <div class="mt-3">  
+                <button class="btn btn-primary">Update</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+ -->
+
+
+
+ <!-- <div class="container">
+    <h1 class="mt3">Update details</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mt-2">
+            <div class="mt-3">
+                <label for="UserName" class="form-label">Name</label>
+                <input type="text" id="UserName" formControlName="name" class="form-control">
+            </div>
+
+            <div class="mt-3">
+                <label for="UserContact" class="form-label">Contact</label>
+                <input type="number" id="UserContact" formControlName="contact" class="form-control">
+            </div>
+
+            <div class="mt-3">
+                <label for="UserPassword" class="form-label">Password</label>
+                <input type="password" id="UserPassword" formControlName="password" class="form-control">
+            </div>
+
+            <div class="mt-3">
+                <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+ -->
+
+ <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.maincontainer {
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/00760817878897.562c05d336f7f.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Ensure some padding around the container */
+}
+
+.update-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for readability */
+    padding: 30px;
+    border-radius: 15px; /* Increased border-radius for a more card-like appearance */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px; /* Increased max-width for a bigger card */
+    text-align: center;
+}
+
+.text {
+    margin-bottom: 30px; /* Adds space between the heading and the form */
+    color: #184ccc; /* Optional: color change for the heading */
+}
+
+.update-form {
+    width: 100%;
+}
+
+.update-form .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.update-form .form-control {
+    border-radius: 5px;
+    margin-bottom: 15px; /* Adds space between form controls */
+}
+
+.update-form button {
+    width: 30%;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #184ccc; /* Match button color with the heading color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.update-form button:disabled {
+    background-color: #a9a9a9; /* Disabled button color */
+}
+
+ </style>
+
+<div class="maincontainer">
+    <div class="update-container">
+        <h1 class="text">Update Details</h1>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="update-form">
+            <div class="mt-2">
+                <div class="mt-3">
+                    <label for="UserName" class="form-label">Name</label>
+                    <input type="text" id="UserName" formControlName="name" class="form-control">
+                </div>
+
+                <div class="mt-3">
+                    <label for="UserContact" class="form-label">Contact</label>
+                    <input type="number" id="UserContact" formControlName="contact" class="form-control">
+                </div>
+
+                <div class="mt-3">
+                    <label for="UserPassword" class="form-label">Password</label>
+                    <input type="password" id="UserPassword" formControlName="password" class="form-control">
+                </div>
+
+                <div class="mt-4 text-center"> <!-- Increased margin-top -->
+                    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
